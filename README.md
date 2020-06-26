@@ -19,7 +19,7 @@ Razor Pages advantages over controller/view development:
 
 * **Leads to more maintainable code and a folder structure by default that's easier to navigate.**  
   * Controllers often end up with a large number of `Action` methods, many of which are not related to each other.
-  * Controllers contain all the shared code used by all the `Action` methods. Razor Pages include only the code they use. Shared code for Razor Pages is contained in a base class. For example, see [Create a base class to share common code](https://docs.microsoft.com/aspnet/core/data/ef-rp/update-related-data#create-a-base-class-to-share-common-code).
+  * Controllers contain all the shared code used by all the `Action` methods. Razor Pages include only the code they use. Shared code for Razor Pages is contained in a base class. For example, see [Create a base class to share common code](https://docs.microsoft.com/aspnet/core/data/ef-rp/update-related-data#create-a-base-class-for-course-create-and-edit).
 
    MVC uses separate folders for Views, Controllers, and ViewModels when all three are tightly coupled. You must bounce between all three folders when you need to add/change/debug a feature. With Razor Pages, the `PageModel` (Controller + ViewModel) is in the same folder as the View.  Hit F7 in Visual Studio to toggle between them.
 
