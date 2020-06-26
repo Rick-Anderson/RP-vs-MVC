@@ -2,8 +2,6 @@
 
 By [Scott Sauber](https://twitter.com/scottsauber) and [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-https://docs.microsoft.com/en-us/aspnet/core/security/authorization/simple?view=aspnetcore-3.1#authorize-attribute-and-razor-pages
-
 **Warning: This is an opinionated document. This is not an official Microsoft document.**  
 
 Razor Pages is a feature of the ASP.NET Core framework. Razor Pages follows the [MVVM](/xamarin/xamarin-forms/enterprise-application-patterns/mvvm) pattern. Developers and teams familiar with ASP.NET Core MVC development:
@@ -60,8 +58,8 @@ Razor Pages and Web Forms ASP.NET 4.x are page focused and each contains a *.cs*
   Reality: The only thing RP share with Web Forms is the page focused approach. RP don't include any of the many [anti-patterns inherent in Web Forms](https://www.codemag.com/Article/070183/What%E2%80%99s-Ailing-ASP.NET-Web-Forms).
 * Myth: Use MVC or RP, don't mix them.
   Reality: In some cases, Microsoft recommends mixing them. For example:
-    * In the official doc's, [Authorize attribute and Razor Pages](https://docs.microsoft.com/en-us/aspnet/core/security/authorization/simple?view=aspnetcore-3.1#authorize-attribute-and-razor-pages) Consider using an ASP.NET Core MVC controller for pages with different authorization requirements for different handlers.
-    * [Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-3.1&tabs=visual-studio) is provided in a Razor Class Library. You can scaffold the source code into your MVC project, but you get Identity as Razor Pages.
+    * In the official doc's, [Authorize attribute and Razor Pages](https://docs.microsoft.com/en-us/aspnet/core/security/authorization/simple#authorize-attribute-and-razor-pages) Consider using an ASP.NET Core MVC controller for pages with different authorization requirements for different handlers.
+    * [Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity) is provided in a Razor Class Library. You can scaffold the source code into your MVC project, but you get Identity as Razor Pages.
 
 ## Comments from developers who prefer RP over MVC
 
