@@ -1,8 +1,8 @@
-# Razor Pages compared to ASP.NET Core MVC
+# Razor Pages vs ASP.NET Core MVC
 
 By [Scott Sauber](https://twitter.com/scottsauber) and [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-**Warning: This is a somewhat opinionated document. This is not an official Microsoft document.**  
+**Warning: This is an opinionated document. This is not an official Microsoft document.**  
 
 Razor Pages is a feature of the ASP.NET Core framework. Razor Pages follows the [MVVM](/xamarin/xamarin-forms/enterprise-application-patterns/mvvm) pattern. Developers and teams familiar with ASP.NET Core MVC development:
 
@@ -19,7 +19,7 @@ Razor Pages advantages over controller/view development:
 
 * **Leads to more maintainable code and a folder structure by default that's easier to navigate.**  
   * Controllers often end up with a large number of `Action` methods, many of which are not related to each other.
-  * Controllers contain all the shared code used by all the `Action` methods. Razor Pages include only the code they use. Shared code for Razor Pages is contained in a base class. For example, see [Create a base class to share common code](https://docs.microsoft.com/aspnet/core/data/ef-rp/update-related-data?view=aspnetcore-2.1#create-a-base-class-to-share-common-code).
+  * Controllers contain all the shared code used by all the `Action` methods. Razor Pages include only the code they use. Shared code for Razor Pages is contained in a base class. For example, see [Create a base class to share common code](https://docs.microsoft.com/aspnet/core/data/ef-rp/update-related-data#create-a-base-class-to-share-common-code).
 
    MVC uses separate folders for Views, Controllers, and ViewModels when all three are tightly coupled. You must bounce between all three folders when you need to add/change/debug a feature. With Razor Pages, the `PageModel` (Controller + ViewModel) is in the same folder as the View.  Hit F7 in Visual Studio to toggle between them.
 
