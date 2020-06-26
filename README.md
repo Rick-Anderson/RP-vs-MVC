@@ -91,6 +91,7 @@ Hope that helps clear up why we chose Razor Pages and why we won't willingly go 
 
 * [ASP.NET Razor Pages vs MVC: How Do Razor Pages Fit in Your Toolbox?](https://stackify.com/asp-net-razor-pages-vs-mvc/) Excellent article by [MATT WATSON](https://stackify.com/asp-net-razor-pages-vs-mvc/#wpautbox_about), Founder & CEO of [Stackify](https://stackify.com/)
 * [How Does Razor Pages Differ From MVC In ASP.NET Core?](https://exceptionnotfound.net/razor-pages-how-does-it-differ-from-mvc-in-asp-net-core/) Excellent article by [Matthew Jones](https://exceptionnotfound.net/author/matthew-jones/)
-* [MSDN Magazine: Simpler ASP.NET MVC Apps with Razor Pages] by [Steve Smith](https://twitter.com/ardalis)
+* [MSDN Magazine: Simpler ASP.NET MVC Apps with Razor Pages](https://docs.microsoft.com/en-us/archive/msdn-magazine/2017/september/asp-net-core-simpler-asp-net-mvc-apps-with-razor-pages) by [Steve Smith](https://twitter.com/ardalis)
 * Stack Overflow [ASP.NET Core Razor pages vs Full MVC Core](https://stackoverflow.com/questions/48121928/asp-net-core-razor-pages-vs-full-mvc-core)
+* Stack Overflow [Why is Razor Pages the recommended approach to create a Web UI in Asp.net Core?](https://stackoverflow.com/questions/46777404/why-is-razor-pages-the-recommended-approach-to-create-a-web-ui-in-asp-net-core)
 * Microsoft official GitHub closed discussion issue on [Why choose MVC tutorials over Razor Pages](https://github.com/dotnet/AspNetCore.Docs/issues/6146). You'll need to select **Load more...** several times to see all the responses.
