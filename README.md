@@ -28,7 +28,7 @@ Razor Pages advantages over controller/view development:
   * All the Employee pages are under the */Employee* folder.  
   * The app can authorize an entire folder and require the user to be an Administrator to get to any subfolder of */Administrator*. The code to do this is more straightforward than using multiple Controllers for Administrator features.
 * **More secure by default.**  Razor Pages provides:
-  * [AntiForgeryToken validation](https://docs.microsoft.com/aspnet/core/razor-pages/index?view=aspnetcore-2.1#xsrfcsrf-and-razor-pages) by default.
+  * [AntiForgeryToken validation](https://docs.microsoft.com/aspnet/core/razor-pages/index#xsrfcsrf-and-razor-pages) by default.
   * You opt-in to the properties that need to be model bound via `[BindProperty]`. `[BindProperty]` prevents [mass assignment/over-posting](https://www.owasp.org/index.php/Mass_Assignment_Cheat_Sheet) attacks.
   * The `PageModel` acts like a view model.
 
@@ -43,11 +43,11 @@ Razor Pages and Web Forms ASP.NET 4.x are page focused and each contains a *.cs*
 |[Testable](xref:test/index)| x | x |
 |Separation of concerns| x | x |
 |Areas| x | 2.1 |
-| Routing | [MVC](https://docs.microsoft.com/aspnet/core/mvc/controllers/routing?view=aspnetcore-2.1) | [RP](https://docs.microsoft.com/aspnet/core/razor-pages/razor-pages-conventions?view=aspnetcore-2.1) |
-| [Model binding/validation](https://docs.microsoft.com/aspnet/core/mvc/models/model-binding?view=aspnetcore-2.1) | x | x |
-| Filters | [MVC](https://docs.microsoft.com/aspnet/core/mvc/controllers/filters?view=aspnetcore-2.1) | [RP](https://docs.microsoft.com/aspnet/core/razor-pages/razor-pages/filter?view=aspnetcore-2.1) |
-| [Tag Helpers](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-2.1) | x | x |
-| [Layout files](https://docs.microsoft.com/aspnet/core/mvc/views/layout?view=aspnetcore-2.1) | x | x |
-|[Partial views](https://docs.microsoft.com/aspnet/core/mvc/views/partial?view=aspnetcore-2.1)| x | x |
+| Routing | [MVC](https://docs.microsoft.com/aspnet/core/mvc/controllers/routing) | [RP](https://docs.microsoft.com/aspnet/core/razor-pages/razor-pages-conventions) |
+| [Model binding/validation](https://docs.microsoft.com/aspnet/core/mvc/models/model-binding) | x | x |
+| Filters | [MVC](https://docs.microsoft.com/aspnet/core/mvc/controllers/filters) | [RP](https://docs.microsoft.com/aspnet/core/razor-pages/razor-pages/filter) |
+| [Tag Helpers](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/intro) | x | x |
+| [Layout files](https://docs.microsoft.com/aspnet/core/mvc/views/layout) | x | x |
+|[Partial views](https://docs.microsoft.com/aspnet/core/mvc/views/partial)| x | x |
 |View Components | x | x|
-|[Built in DI](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1) | x | x |
+|[Built in DI](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection) | x | x |
