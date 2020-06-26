@@ -2,6 +2,8 @@
 
 By [Scott Sauber](https://twitter.com/scottsauber) and [Rick Anderson](https://twitter.com/RickAndMSFT)
 
+https://docs.microsoft.com/en-us/aspnet/core/security/authorization/simple?view=aspnetcore-3.1#authorize-attribute-and-razor-pages
+
 **Warning: This is an opinionated document. This is not an official Microsoft document.**  
 
 Razor Pages is a feature of the ASP.NET Core framework. Razor Pages follows the [MVVM](/xamarin/xamarin-forms/enterprise-application-patterns/mvvm) pattern. Developers and teams familiar with ASP.NET Core MVC development:
@@ -34,7 +36,7 @@ Razor Pages advantages over controller/view development:
 
 ## Razor Pages compared to Web Forms
 
-Razor Pages and Web Forms ASP.NET 4.x are page focused and each contains a *.cs* file associated with the markup page. Other than the page focus, Razor Pages are very different from Web Forms. It can be difficult to migrate Web Forms code to Razor Pages. Converting between Razor Pages and ASP.NET Core MVC is generally straightforward. Razor Pages and Web Forms have very little in common. Razor Pages and ASP.NET Core MVC share most of the ASP.NET Core framework. The following section shows many features shared between Razor Pages and ASP.NET Core MVC that are not found in Web Forms.
+Razor Pages and Web Forms ASP.NET 4.x are page focused and each contains a *.cs* file associated with the markup page. Other than the page focus, Razor Pages are different from Web Forms. It can be difficult to migrate Web Forms code to Razor Pages. Converting between Razor Pages and ASP.NET Core MVC is generally straightforward. Razor Pages and Web Forms have very little in common. Razor Pages and ASP.NET Core MVC share most of the ASP.NET Core framework. The following section shows many features shared between Razor Pages and ASP.NET Core MVC that are not found in Web Forms.
 
 ## Feature comparison of Razor Pages and MVC with controller and views
 
@@ -52,6 +54,15 @@ Razor Pages and Web Forms ASP.NET 4.x are page focused and each contains a *.cs*
 |View Components | x | x|
 |[Built in DI](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection) | x | x |
 
+## Common myths on RP
+
+* Myth: Razor Pages are like Web Forms
+  Reality: The only thing RP share with Web Forms is the page focused approach. RP don't include any of the many [anti-patterns inherent in Web Forms](https://www.codemag.com/Article/070183/What%E2%80%99s-Ailing-ASP.NET-Web-Forms).
+* Myth: Use MVC or RP, don't mix them.
+  Reality: In some cases, Microsoft recommends mixing them. For example:
+    * In the official doc's, [Authorize attribute and Razor Pages](https://docs.microsoft.com/en-us/aspnet/core/security/authorization/simple?view=aspnetcore-3.1#authorize-attribute-and-razor-pages) Consider using an ASP.NET Core MVC controller for pages with different authorization requirements for different handlers.
+    * [Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-3.1&tabs=visual-studio) is provided in a Razor Class Library. You can scaffold the source code into your MVC project, but you get Identity as Razor Pages.
+
 ## Comments from developers who prefer RP over MVC
 
 * [Scott Sauber](https://twitter.com/scottsauber) comments [here](https://github.com/dotnet/AspNetCore.Docs/issues/6146#issuecomment-398599679)
@@ -59,7 +70,7 @@ Razor Pages and Web Forms ASP.NET 4.x are page focused and each contains a *.cs*
 
 We have 60+ pages and I can say that **for Server-rendered HTML,** I will never go back to MVC.  It's just a better fit for server-rendered HTML apps.  It's also not just for simple things.  The Health Insurance domain is inherently complex and combine this with the fact that it's a multi-tenant app (we sell the product to other insurance companies), which adds more complexity as the app is highly configurable as different insurance companies do things a bit differently.
 
-Why use it?
+ Why use it?
 - **Razor Pages is more secure by default.**  Razor Pages gives you AntiForgeryToken validation by default.  Plus you opt-in to what properties you want to be model bound via `[BindProperty]` which limits your exposure to over-posting attacks.
 - **Razor Pages has a better folder structure by default that scales better.**  In MVC, the default folder structure simply does not scale.  Having separate folders for Views, Controllers, and often ViewModels when all three are ultimately tightly coupled to one another is a huge PITA to work with.  You end up bouncing to all 3 folders and navigating a bunch anytime you need to add or change a feature.  It's horrible.  This is why I advocated for [Feature Folders](https://scottsauber.com/2016/04/25/feature-folder-structure-in-asp-net-core/).  With Razor Pages, your PageModel (Controller + ViewModel) are in the same folder as your View.  You can just hit F7 to toggle between them which is also super convenient.
 - **Leads to more maintainable code that scales better.**  With MVC it was super easy to bloat a Controller with 10+ Actions.  Often, these Actions weren't even related to one another in any way (except maybe a Redirect between the two).  This made navigating the Controller to find code very difficult.  It got worse if there were private methods in the Controller too, further adding to the method bloat.  With Razor Pages, it's nearly impossible to bloat up your Page Model with unrelated methods to your page.  Everything you put in your PageModel is related to your Page.
@@ -73,7 +84,7 @@ Some stuff we do that has helped us:
 - Put the InputModels/ViewModels in a separate file (living in the same folder, right next to the RazorPage it belonged to) vs. an inline class in the PageModel.  We found this was easier to reason about and de-cluttered the PageModel because we had some pages with lots of input fields.  Although I know some people feel the opposite about this.
 
 Hope that helps clear up why we chose Razor Pages and why we won't willingly go back to MVC for server-rendered HTML apps.  If you're not rendering HTML server-side and you're just writing API's for a React/Angular/Vue/whatever front-end, then don't use Razor Pages, use MVC.
-* [Anthony Stivers] comments [here](https://github.com/dotnet/AspNetCore.Docs/issues/6146#issuecomment-398245724)
+* [Anthony Stivers]() comments [here](https://github.com/dotnet/AspNetCore.Docs/issues/6146#issuecomment-398245724)
   The primary reason *I* chose to start using Razor Pages over MVC is because it gets rid of the massive controller problem that exists within MVC. Each `PageModel` is only responsible for itself. Whereas with MVC, a `Controller` is responsible for multiple Views and ViewModels. MVC is still the logical solution for the API portions of ASP.NET projects, though. And because it wouldn't make sense to implement API in Razor Pages, MVC is almost certainly going to co-exist with Razor Pages, rather than Razor Pages replacing MVC.
 
 ## Additional RP vs. MVC blogs, posts, etc
@@ -82,4 +93,4 @@ Hope that helps clear up why we chose Razor Pages and why we won't willingly go 
 * [How Does Razor Pages Differ From MVC In ASP.NET Core?](https://exceptionnotfound.net/razor-pages-how-does-it-differ-from-mvc-in-asp-net-core/) Excellent article by [Matthew Jones](https://exceptionnotfound.net/author/matthew-jones/)
 * [MSDN Magazine: Simpler ASP.NET MVC Apps with Razor Pages] by [Steve Smith](https://twitter.com/ardalis)
 * Stack Overflow [ASP.NET Core Razor pages vs Full MVC Core](https://stackoverflow.com/questions/48121928/asp-net-core-razor-pages-vs-full-mvc-core)
-* GitHub closed discussion issue on [Why choose MVC tutorials over Razor Pages](https://github.com/dotnet/AspNetCore.Docs/issues/6146)
+* Microsoft official GitHub closed discussion issue on [Why choose MVC tutorials over Razor Pages](https://github.com/dotnet/AspNetCore.Docs/issues/6146). You'll need to select **Load more...** several times to see all the responses.
