@@ -54,7 +54,7 @@ Razor Pages and Web Forms ASP.NET 4.x are page focused and each contains a *.cs*
 
 ## Common myths on RP
 
-* Myth: Razor Pages are like Web Forms
+* Myth: Razor Pages are like Web Forms.
   Reality: The only thing RP share with Web Forms is the page focused approach. RP don't include any of the many [anti-patterns inherent in Web Forms](https://www.codemag.com/Article/070183/What%E2%80%99s-Ailing-ASP.NET-Web-Forms).
 * Myth: Use MVC or RP, don't mix them.
   Reality: In some cases, Microsoft recommends mixing them. For example:
